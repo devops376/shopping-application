@@ -27,7 +27,7 @@ jobs:
         run: packer fmt .
         working-directory: ./packer/
       - name: "Packer Build Image"
-        run: packer build -var-file="dev.pkrvars.hcl"
+        run: packer build -var-file="dev.pkrvars.hcl" .
         working-directory: ./packer/
         env:
           AWS_ACCESS_KEY_ID: ${{secrets.DEV_ACCESS_KEY}}
